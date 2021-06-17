@@ -24,7 +24,6 @@ UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 PKG_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/nls.mk
 
 define Package/aria2
 	SECTION:=net
