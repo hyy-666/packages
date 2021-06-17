@@ -64,4 +64,4 @@ define Package/aria2/install
 	$(INSTALL_CONF) ./files/aria2.conf $(1)/etc/config/aria2
 endef
 
-$(eval $(call BuildPackage,$(PKG_NAME)))
+$(eval $(call BuildPackage,aria2))
