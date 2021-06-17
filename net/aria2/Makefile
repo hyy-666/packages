@@ -44,6 +44,12 @@ define Build/Prepare
 	tar -zxvf $(DL_DIR)/$(PKG_SOURCE) -C $(UNTAR_DIR)
 endef
 
+define Build/Configure
+endef
+
+define Build/Compile
+endef
+
 define Package/aria2/conffiles
 	/etc/config/aria2
 endef
