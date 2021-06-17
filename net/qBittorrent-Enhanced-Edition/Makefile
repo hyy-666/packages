@@ -12,19 +12,27 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-release-$(PKG_VERSION)
 
 PKG_LICENSE:=GPL-2.0+
 PKG_LICENSE_FILES:=COPYING
-
+PKG_CPE_ID:=cpe:/a:qbittorrent:qbittorrent
+PKG_BUILD_DEPENDS:=qttools
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
-  SUBMENU:=BitTorrent
-  SECTION:=net
-  CATEGORY:=Network
-  TITLE:=bittorrent client programmed in C++ / Qt
-  URL:=https://github.com/c0re100/qBittorrent-Enhanced-Edition
-  DEPENDS:=+boost +libtorrent-rasterbar +python3 +qt5-core +qt5-network +qt5-sql +qt5-xml
+	SECTION:=net
+	CATEGORY:=Network
+	SUBMENU:=BitTorrent
+	DEPENDS:=+libgcc +libstdcpp \
+		+rblibtorrent \
+		+libopenssl \
+		+qt5-core \
+		+qt5-network \
+		+qt5-xml \
+		+zlib
+	TITLE:=bittorrent client programmed in C++ / Qt
+  	URL:=https://github.com/c0re100/qBittorrent-Enhanced-Edition
+	PROVIDES:=qBittorrent-Enhanced-Edition
 endef
 
 define Package/$(PKG_NAME)/description
