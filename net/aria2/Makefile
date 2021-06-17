@@ -37,8 +37,8 @@ define Package/aria2
 endef
 
 define Package/aria2/description
-  aria2 is a lightweight multi-protocol & multi-source command-line download
-  utility
+	aria2 static builds for GNU/Linux with custom patches.
+	utility
 endef
 
 define Build/Prepare
