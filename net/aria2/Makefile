@@ -20,7 +20,7 @@ endif
 
 PKG_SOURCE:=aria2-$(PKG_VERSION)-static-linux-$(PKG_ARCH_ARIA2).tar.gz
 PKG_SOURCE_URL:=https://github.com/P3TERX/aria2-builder/releases/download/$(PKG_VERSION)_$(PKG_RELEASE)/
-UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
