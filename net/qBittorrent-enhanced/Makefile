@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=qBittorrent-enhanced
+PKG_NAME:=qBittorrent-Enhanced
 PKG_VERSION:=4.3.5.10
 PKG_LICENSE:=GPL-2.0+
 PKG_INSTALL:=$(AUTORELEASE)
@@ -16,36 +16,36 @@ define Package/$(PKG_NAME)
 endef
 
 ifeq ($(ARCH),x86_64)
-	PKG_ARCH_qBittorrent-enhanced:=x86_64
+	PKG_ARCH_qBittorrent-Enhanced:=x86_64
 endif
 
 
 ifeq ($(ARCH),aarch64)
-	PKG_ARCH_qBittorrent-enhanced:=aarch64
+	PKG_ARCH_qBittorrent-Enhanced:=aarch64
 endif
 
 ifeq ($(ARCH),mips)
-	PKG_ARCH_qBittorrent-enhanced:=mips
+	PKG_ARCH_qBittorrent-Enhanced:=mips
 endif
 
 ifeq ($(ARCH),mipsel)
-	PKG_ARCH_qBittorrent-enhanced:=mipsel
+	PKG_ARCH_qBittorrent-Enhanced:=mipsel
 endif
 
 ifeq ($(ARCH),mips64)
-	PKG_ARCH_qBittorrent-enhanced:=mips64
+	PKG_ARCH_qBittorrent-Enhanced:=mips64
 endif
 
 
 
 
-PKG_SOURCE:=qBittorrent-nox_$(PKG_ARCH_qBittorrent-enhanced)-linux-musl_static.zip
+PKG_SOURCE:=qBittorrent-nox_$(PKG_ARCH_qBittorrent-Enhanced)-linux-musl_static.zip
 PKG_SOURCE_URL:=https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/download/release-$(PKG_VERSION)/
 UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 PKG_HASH:=skip
 
-define Package/qBittorrent-enhanced/description
-	qBittorrent-enhanced is based on qBittorrent, it's aimed at block a leeching clients automatically.
+define Package/qBittorrent-Enhanced/description
+	qBittorrent-Enhanced is based on qBittorrent, it's aimed at block a leeching clients automatically.
 endef
 
 define Build/Prepare
@@ -62,7 +62,7 @@ endef
 define Build/Compile
 endef
 
-define Package/qBittorrent-enhanced/install
+define Package/qBittorrent-Enhanced/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(UNTAR_DIR)/qBittorrentEE-nox $(1)/usr/bin
 	chmod 755 $(1)/usr/bin/qBittorrentEE-nox
