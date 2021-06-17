@@ -30,7 +30,7 @@ define Package/aria2
 	SUBMENU:=File Transfer
 	TITLE:=lightweight download utility
 	URL:=https://github.com/P3TERX/Aria2-Pro-Core
-	DEPENDS:=+bash +curl +findutils +jq
+	DEPENDS:=@(aarch64||arm||x86_64) +bash +curl +findutils +jq
 	USERID:=aria2=6800:aria2=6800
 endef
 
