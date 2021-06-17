@@ -3,7 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=qBittorrent-enhanced
 PKG_VERSION:=4.3.5.10
 PKG_LICENSE:=GPL-2.0+
-PKG_INSTALL:=1
+PKG_INSTALL:=$(AUTORELEASE)
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -49,6 +49,7 @@ define Package/qBittorrent-enhanced/description
 endef
 
 define Build/Prepare
+	$(call Build/Prepare/Default)
 	rm -rf $(UNTAR_DIR)
 	mkdir -vp $(UNTAR_DIR)
 	unzip $(DL_DIR)/$(PKG_SOURCE) -d $(UNTAR_DIR)
@@ -67,4 +68,4 @@ define Package/qBittorrent-enhanced/install
 	chmod 755 $(1)/usr/bin/qBittorrentEE-nox
 endef
 
-$(eval $(call BuildPackage,qBittorrent-enhanced))
+$(eval $(call BuildPackage,$(PKG_NAME)))
