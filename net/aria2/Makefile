@@ -3,7 +3,6 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=aria2
 PKG_VERSION:=1.35.0
 PKG_RELEASE:=2021.02.19
-PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
 
 ifeq ($(ARCH),i386)
@@ -45,7 +44,6 @@ define Build/Prepare
 endef
 
 define Build/Compile
-	echo "wdnmd"
 endef
 
 define Package/aria2/conffiles
