@@ -55,6 +55,7 @@ endef
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/qbittorrent-nox $(1)/usr/bin
+	mv $(1)/usr/bin/qbittorrent-nox $(1)/usr/bin/qBittorrentEE-nox
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
