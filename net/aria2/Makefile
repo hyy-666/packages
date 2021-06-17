@@ -32,13 +32,12 @@ define Package/aria2
 	SUBMENU:=File Transfer
 	TITLE:=lightweight download utility
 	URL:=https://github.com/P3TERX/Aria2-Pro-Core
-	DEPENDS:=+bash +curl +findutils +jq +@(i386||x86_64||aarch64)
+	DEPENDS:=+bash +curl +findutils +jq
 	USERID:=aria2=6800:aria2=6800
 endef
 
 define Package/aria2/description
 	aria2 static builds for GNU/Linux with custom patches.
-	utility
 endef
 
 define Build/Prepare
