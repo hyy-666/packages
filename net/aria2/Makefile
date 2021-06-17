@@ -4,7 +4,7 @@ PKG_NAME:=aria2
 PKG_VERSION:=1.35.0
 PKG_RELEASE:=2021.02.19
 PKG_INSTALL:=1
-STRIP:=true
+PKG_BUILD_PARALLEL:=1
 
 ifeq ($(ARCH),i386)
 	PKG_ARCH_ARIA2:=i386
@@ -37,8 +37,8 @@ define Package/aria2
 endef
 
 define Package/aria2/description
-	aria2 static builds for GNU/Linux with custom patches.
-	utility
+  aria2 is a lightweight multi-protocol & multi-source command-line download
+  utility
 endef
 
 define Build/Prepare
@@ -50,6 +50,10 @@ define Build/Configure
 endef
 
 define Build/Compile
+endef
+
+define Package/aria2/conffiles
+	/etc/config/aria2
 endef
 
 define Package/aria2/install
