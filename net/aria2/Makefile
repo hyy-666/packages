@@ -24,8 +24,9 @@ UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 PKG_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
-define Package/$(PKG_NAME)
+define Package/aria2
 	SECTION:=net
 	CATEGORY:=Network
 	SUBMENU:=File Transfer
@@ -35,7 +36,7 @@ define Package/$(PKG_NAME)
 	USERID:=aria2=6800:aria2=6800
 endef
 
-define Package/$(PKG_NAME)/description
+define Package/aria2/description
 	aria2 static builds for GNU/Linux with custom patches.
 	utility
 endef
