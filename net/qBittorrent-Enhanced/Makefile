@@ -3,7 +3,6 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=qBittorrent-Enhanced
 PKG_VERSION:=4.3.5.10
 PKG_LICENSE:=GPL-2.0+
-PKG_INSTALL:=$(AUTORELEASE)
 
 include $(INCLUDE_DIR)/package.mk
 
