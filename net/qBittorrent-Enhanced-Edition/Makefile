@@ -15,6 +15,7 @@ PKG_LICENSE_FILES:=COPYING
 PKG_BUILD_DEPENDS:=qttools
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
+PKG_USE_MIPS16:=0
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -42,10 +43,6 @@ there. qBittorrent is fast, stable and provides unicode support as
 well as many features.
 endef
 
-CONFIGURE_VARS += \
-  	QT_QMAKE="$(TOOLCHAIN_DIR)/bin" \
-	PKG_CONFIG_PATH="$(TOOLCHAIN_DIR)/lib/pkgconfig"
-
 CONFIGURE_ARGS += \
 	--disable-gui \
 	--enable-stacktrace=no \
@@ -54,9 +51,11 @@ CONFIGURE_ARGS += \
 MAKE_VARS += \
 	INSTALL_ROOT="$(PKG_INSTALL_DIR)"
 
-define Build/Prepare
-	$(call Build/Prepare/Default)
-	$(SED) '/<context>/{:a;N;/<\/context>/!ba;/\/gui\//d}' `ls $(PKG_BUILD_DIR)/src/lang/qbittorrent_*.ts`
+
+TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed
+
+define Package/qbittorrent/conffiles
+/etc/config/qbittorrent
 endef
 
 define Package/$(PKG_NAME)/install
