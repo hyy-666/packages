@@ -58,6 +58,12 @@ define Package/qtbase
 	DEPENDS+=$(QTBASE_DEPENDS)
 endef
 
+define Package/qt5-sql
+	$(call Package/qt5/Default)
+	TITLE+=sql
+	DEPENDS+=+qt5-core +libsqlite3
+endef
+
 define Package/qtbase/install
 	true
 endef
@@ -211,5 +217,5 @@ $(eval $(call DefineQtbaseLibrary,network,core,+libopenssl +zlib))
 $(eval $(call DefineQtbaseLibrary,xml,core,))
 
 $(foreach lib,$(QTBASE_LIBS),$(eval $(call BuildPackage,qt5-$(lib))))
-$(eval $(call BuildPackage,qtbase))
 $(eval $(call BuildPackage,qt5-sql))
+$(eval $(call BuildPackage,qtbase))
