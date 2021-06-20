@@ -50,6 +50,7 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
+	mv $(PKG_INSTALL_DIR)/usr/bin/qBittorrent-nox $(PKG_INSTALL_DIR)/usr/bin/qBittorrentEE-nox
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/qBittorrentEE-nox $(1)/usr/bin
 endef
 
