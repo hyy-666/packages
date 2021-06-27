@@ -102,3 +102,4 @@ define Package/aria2/install
 endef
 
 $(eval $(call BuildPackage,aria2))
+
