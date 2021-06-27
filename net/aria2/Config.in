@@ -5,11 +5,11 @@ choice
 	prompt "SSL Library"
 	default ARIA2_OPENSSL
 
-config ARIA2_OPENSSL
-	bool "OpenSSL"
-
 config ARIA2_GNUTLS
 	bool "GnuTLS"
+
+config ARIA2_OPENSSL
+	bool "OpenSSL"
 
 config ARIA2_NOSSL
 	bool "No SSL Support"
